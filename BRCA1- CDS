@@ -1,1 +1,5 @@
-
+01_reference/
+├── BRCA1_WT_CDS.fasta
+├── BRCA1_WT_protein.fasta
+└── annotations/
+    └── README.md
