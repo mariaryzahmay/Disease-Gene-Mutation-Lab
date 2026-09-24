@@ -1,1 +1,307 @@
+# CELL AND MOLECULAR BIOLOGY LABORATORY
 
+## From Gene Mutation to Disease
+
+### Investigating How DNA Sequence Changes Affect Protein Products and Human Phenotypes
+
+---
+
+## Background
+
+Hereditary breast and ovarian cancer syndrome is an inherited cancer predisposition condition commonly associated with pathogenic variants in the **BRCA1** and **BRCA2** genes. Individuals who carry pathogenic BRCA variants have an increased susceptibility to breast cancer and ovarian cancer and may also have increased risks in other cancers. Unlike sporadic cancers, hereditary cancer susceptibility can be passed from one generation to another because the predisposing genetic variant is present in the individual's inherited DNA.
+
+BRCA1-associated cancer susceptibility is mainly related to the loss of normal mechanisms that maintain genomic stability. When the function is impaired, cells may become less capable of properly repairing certain forms of DNA damage. Accumulation of DNA damage and genomic abnormalities can contribute to the development of cancer. BRCA1-associated hereditary cancer susceptibility follows an autosomal dominant inheritance pattern.
+
+---
+
+# Learning Objectives
+
+1. Investigate the molecular basis of a human genetic disease or phenotype.
+2. Retrieve an appropriate human reference CDS and protein sequence.
+3. Explain the normal function of a selected gene and protein.
+4. Identify a documented genetic variant associated with a disease or phenotype.
+5. Manually reproduce a mutation in a nucleotide sequence.
+6. Translate normal and mutant coding sequences.
+7. Compare normal and mutant protein sequences.
+8. Identify mutation types such as missense, nonsense, frameshift, in-frame insertion/deletion, and repeat expansion.
+9. Predict how a mutation may affect protein function.
+10. Relate molecular changes to cellular and organismal phenotypes.
+11. Distinguish computational prediction from experimental evidence.
+12. Document the laboratory workflow using Galaxy and GitHub.
+
+---
+
+# Important Scientific Distinction
+
+Translation of a DNA sequence predicts the protein sequence encoded by that CDS. It does not demonstrate that the protein is actually expressed in a human cell.
+
+Protein expression, abundance, localization, folding, and activity require additional experimental evidence. Use the term **"predicted protein sequence"** when discussing the output of sequence translation.
+
+---
+
+# Part I. Select a Human Disease and Gene
+
+Each student must investigate a different human disease/phenotype–gene combination. Your selected disease and gene must be approved by the instructor.
+
+Examples include:
+
+- HIV susceptibility – **CCR5**
+- Cystic fibrosis – **CFTR**
+- Sickle cell disease – **HBB**
+- Huntington disease – **HTT**
+- Achondroplasia – **FGFR3**
+- Phenylketonuria – **PAH**
+- Wilson disease – **ATP7B**
+- Li-Fraumeni syndrome – **TP53**
+- Hereditary breast/ovarian cancer – **BRCA1** or **BRCA2**
+- Familial Parkinson disease – **LRRK2**
+
+---
+
+# Part II. Research the Disease
+
+## A. Disease
+
+Hereditary Breast and Ovarian Cancer (HBOC) syndrome is an inherited cancer-predisposition condition associated with pathogenic variants in genes such as **BRCA1**. In individuals with a pathogenic BRCA1 variant, the risk of developing certain cancers is increased, particularly breast cancer and ovarian cancer, including cancers of the fallopian tube and primary peritoneum. BRCA1-associated HBOC may also be associated with increased risks of other cancers, including pancreatic and prostate cancer, although the risks of other cancer types vary depending on whether the pathogenic variant is in BRCA1 or BRCA2.
+
+The major clinical characteristic of HBOC is therefore a higher-than-usual lifetime susceptibility to certain cancers, rather than a single cancer that is always present. The condition follows an autosomal dominant inheritance pattern.
+
+---
+
+## B. Gene and Normal Protein
+
+The **BRCA1 [BRCA1 DNA repair associated]** gene is a protein-coding gene located on chromosome 17q21.31. **NM_007294.4** is the reference transcript used that encodes the BRCA1 DNA repair-associated protein (**NP_009225.1**), a nuclear protein that functions as a tumor suppressor and helps maintain genomic stability.
+
+BRCA1 participates in the cellular response to DNA damage, particularly the repair of DNA double-strand breaks through homologous recombination, and it also contributes to cell-cycle regulation, transcription, and interactions with other DNA-repair proteins. The BRCA1 protein is found predominantly in the nucleus, where it works with other proteins to detect and respond to DNA damage.
+
+Through its involvement in DNA repair and genome-surveillance complexes, BRCA1 helps preserve the integrity of genetic information. Loss of normal BRCA1 function can therefore contribute to genomic instability and increased susceptibility to hereditary breast and ovarian cancers.
+
+---
+
+# C. Documented Mutation
+
+| Feature | Information |
+|---|---|
+| **Gene** | BRCA1 |
+| **Reference transcript** | NM_007294.4 |
+| **Reference protein** | NP_009225.1 |
+| **Documented mutation** | c.68_69delAG |
+| **Common name** | 185delAG |
+| **Mutation type** | 2-nucleotide deletion / frameshift |
+| **Protein consequence** | p.Glu23ValfsTer17 |
+
+---
+
+# Part III. Obtain the Normal Reference Sequence
+
+| Parameter | Information |
+|---|---|
+| **Transcript** | BRCA1 transcript variant 1, mRNA |
+| **CDS coordinates** | 114..5705 |
+| **CDS accession/reference** | NM_007294.4 CDS |
+| **Reference protein accession** | NP_009225.1 |
+| **Protein** | Breast cancer type 1 susceptibility protein isoform 1 |
+| **CCDS** | CCDS11453.1 |
+| **WT FASTA filename** | `BRCA1_WT_protein.fasta` |
+
+---
+
+# Part V. Establish the Wild-Type Control
+
+| Parameter | BRCA1 Wild-Type (WT) Result |
+|---|---|
+| **Reference transcript** | NM_007294.4 |
+| **Reference protein** | NP_009225.1 |
+| **CDS length** | 5,592 bp |
+| **Predicted protein length** | 1,863 amino acids |
+| **Start codon** | ATG |
+| **Stop codon** | TGA |
+| **Reading frame** | Frame 1 |
+| **First 10 amino acids** | MDLSALRVEE |
+| **Last 10 amino acids** | LIPQIPHSHY |
+
+---
+
+# Part VI. Formulate a Mutation Hypothesis
+
+| Parameter | Prediction |
+|---|---|
+| **Mutation and exact nucleotide change** | NM_007294.4:c.68_69delAG — deletion of the AG nucleotides at coding positions 68–69 |
+| **Number of nucleotides affected** | 2 nucleotides |
+| **Predicted mutation type** | Frameshift deletion |
+| **Predicted effect on reading frame** | Shift the reading frame since the deletion is not divisible by 3 |
+| **Effect on protein length** | Generate a stop codon or produce a shorter protein |
+| **Effect on protein function** | Absent or disrupted protein |
+
+---
+
+# Part VII. Create the Mutant Sequence
+
+| Parameter | Result |
+|---|---|
+| **Original nucleotide position** | c.68–c.69 |
+| **Original sequence** | AG |
+| **Mutant sequence** | Deleted |
+| **Number of bases inserted/deleted/substituted** | 2 |
+| **Mutation type** | Frameshift deletion |
+
+---
+
+# Part VIII. Translate the Mutant Sequence
+
+| Parameter | Result |
+|---|---|
+| **Mutant CDS length** | 5,590 bp |
+| **Mutant protein length** | 39 amino acids |
+| **Reading frame** | Frame 1 |
+| **Location of the first amino-acid difference** | Amino acid 23 |
+| **Presence or absence of a premature stop codon** | Presence of premature stop codon |
+| **Approximate number of amino acids affected** | 1,841 amino acids approximately |
+
+---
+
+# Part IX. Compare WT and Mutant Proteins
+
+The WT and mutant BRCA1 protein sequences first differ at approximately amino-acid position 23, where the deletion causes a shift in the reading frame. More than one amino acid is affected because multiple downstream amino acids are changed after the mutation.
+
+The mutation involves the deletion of two nucleotides rather than direct deletion or insertion of amino acids. The frameshift also produces a premature stop codon, causing translation to terminate earlier than in the WT protein and resulting in a shorter mutant protein.
+
+Therefore, the mutation is classified as a frameshift mutation caused by a two-nucleotide deletion, which leads to extensive downstream changes in the protein sequence and premature termination.
+
+### Figure 1
+
+**Fig. 1.** Sequence alignment of the Wild-Type and Mutant NM_007294.4 protein sequences (residues 1–100), generated using Needle.
+
+---
+
+# Part X. Explain the Molecular Consequence
+
+The documented BRCA1 mutation, **c.68_69delAG (185delAG)**, removes two nucleotides from the coding sequence. Because two is not divisible by three, the deletion changes the grouping of nucleotides into codons beginning at codon 23, producing a frameshift.
+
+Alignment of the WT and mutant sequences shows that the amino-acid sequence begins to differ at approximately position 23, with multiple downstream amino acids altered and a premature termination signal appearing shortly afterward. ClinVar identifies this variant as **p.Glu23ValfsTer17** and classifies it as a frameshift or loss-of-function variant.
+
+The frameshift changes the protein sequence rather than simply substituting one amino acid. Translation therefore produces an abnormal BRCA1 peptide that is much shorter than the normal, 1,863-amino-acid BRCA1 protein.
+
+The normal BRCA1 protein is a nuclear tumor-suppressor protein involved in maintaining genomic stability, including DNA double-strand-break repair and homologous recombination. Because the mutation occurs very early in the coding sequence, the resulting sequence cannot produce the normal full-length BRCA1 protein through the original reading frame.
+
+ClinVar indicates that the premature termination is expected to produce an absent or disrupted protein product, although some studies show that some 185delAG variants can produce an alternative RING-less BRCA1 protein through alternative translation.
+
+Reduced or abnormal BRCA1 function can impair homology-directed repair of DNA damage. Normally, BRCA1 participates in the cellular response to DNA double-strand breaks and helps maintain genome stability. When this pathway is impaired, DNA damage can persist or be repaired through less accurate mechanisms, increasing genomic instability.
+
+Published experimental work specifically involving BRCA1 185delAG found impaired homology-mediated DNA repair and increased genomic instability in human breast epithelial cells.
+
+Over time, the accumulation of genetic abnormalities can increase the probability that cells acquire additional changes affecting growth and cell-cycle regulation, contributing to the development of BRCA1-associated hereditary breast and ovarian cancer susceptibility.
+
+---
+
+# Part XI. Second Experiment: Create Your Own Mutation
+
+| Parameter | Result |
+|---|---|
+| **Selection** | Single nucleotide deletion |
+| **Target Position** | C nucleotide |
+| **Wild Type** | ATC |
+| **Mutant** | ATT |
+
+### Prediction Before Translation of the Artificial Mutant
+
+Before translating the artificial mutant, the prediction was that deleting one C nucleotide would cause a frameshift mutation because the deletion is not a multiple of three. Therefore, the codons downstream of the targeted position were expected to change, resulting in multiple altered amino acids and potentially a premature stop codon, which would likely produce a shorter and potentially nonfunctional BRCA1 protein.
+
+---
+
+# Part XII. Compare the Documented and Artificial Mutations
+
+| Feature | WT BRCA1 | Documented Mutation | Artificial Mutation |
+|---|---|---|---|
+| **Reference** | NM_007294.4 | NM_007294.4 | NM_007294.4 |
+| **CDS Length** | 5,592 nt | 5,590 nt | 5,591 nt |
+| **Protein** | 1,863 amino acids | p.Glu23ValfsTer17 | Altered downstream sequence with premature termination predicted |
+| **Mutation Type** | None | 2-nucleotide deletion | 1-nucleotide deletion |
+| **Reading Frame** | Normal | Changed | Changed |
+| **Premature Stop** | No | Yes | Yes |
+| **Amino Acids Affected** | None | Multiple downstream amino acids | Multiple downstream amino acids |
+| **Expected Functional Consequence** | Normal BRCA1 function | Loss or disruption of normal BRCA1 function | Disrupted normal BRCA1 function |
+
+---
+
+# Part XIII. Interpretation Questions
+
+## 32. Why does the exact location of a mutation matter?
+
+The exact location determines which codon or functional region of the protein is affected. A mutation near the beginning of a coding sequence can alter a large portion of the protein, while a mutation in a less functionally important region may have a smaller effect.
+
+---
+
+## 33. Why can deleting three nucleotides produce a different result from deleting one or two nucleotides?
+
+Three nucleotides correspond to one complete codon, so deleting exactly three nucleotides can remove one amino acid while preserving the downstream reading frame. In contrast, deleting one or two nucleotides shifts the reading frame and can change many downstream amino acids and introduce a premature stop codon.
+
+---
+
+## 34. Does every mutation change the amino-acid sequence? Explain.
+
+No. A mutation can be **synonymous**, meaning that the altered codon still specifies the same amino acid because multiple codons can encode the same amino acid. Mutations outside coding regions can also occur without directly changing the protein sequence.
+
+---
+
+## 35. Does every amino-acid substitution destroy protein function? Explain.
+
+No. The effect depends on the amino acid involved, its location, and the chemical properties of the substitution. Some substitutions have little effect on protein structure or activity, while others can interfere with an important functional or structural region.
+
+---
+
+## 36. Why can a frameshift affect many amino acids even if only one nucleotide was deleted?
+
+Codons are read in groups of three nucleotides, so deleting one nucleotide changes how all subsequent nucleotides are grouped into codons. Consequently, many downstream codons can encode different amino acids until a stop codon is reached.
+
+---
+
+## 37. Why might a premature stop codon produce a nonfunctional protein?
+
+A premature stop codon terminates translation before the normal protein is completed. The resulting truncated protein may lack essential structural or functional domains, and the mutant mRNA may also be recognized and degraded through nonsense-mediated decay.
+
+---
+
+## 38. Could a mutation affect protein function without greatly changing protein length?
+
+Yes. A single-nucleotide substitution can change one important amino acid without changing protein length at all. If that amino acid is essential for catalytic activity, binding, folding, or interaction with another protein, the substitution can still substantially affect function.
+
+---
+
+## 39. Could a mutation cause disease without changing the protein sequence? Give a possible molecular mechanism.
+
+Yes. A mutation in a promoter, enhancer, splice-regulatory region, or other noncoding region can change when, where, or how much of a normal protein is produced.
+
+For example, a regulatory mutation could reduce BRCA1 expression and thereby decrease the amount of functional BRCA1 available for DNA repair even though the protein's amino-acid sequence remains unchanged.
+
+---
+
+## 40. What evidence from your analysis supports the proposed molecular mechanism of your disease?
+
+The sequence comparison directly shows that the documented mutation removes two nucleotides, changes the reading frame beginning around codon 23, alters multiple downstream amino acids, and introduces a premature termination signal.
+
+This computational result agrees with ClinVar's annotation of **c.68_69delAG** as a frameshift producing **p.Glu23ValfsTer17** and with experimental evidence showing impaired homology-mediated DNA repair and increased genomic instability associated with BRCA1 185delAG.
+
+---
+
+## 41. Which conclusions are supported directly by your computational results, and which require evidence from published experimental studies?
+
+The computational analysis directly supports the DNA sequence change, reading-frame shift, altered amino-acid sequence, premature stop codon, and predicted change in protein length.
+
+In contrast, conclusions about the actual effects on BRCA1 structure, DNA-repair activity, genomic stability, and cancer susceptibility require experimental and clinical evidence from published studies, because sequence analysis alone cannot demonstrate how the altered protein behaves inside cells.
+
+---
+
+# References
+
+National Center for Biotechnology Information. (2026). *NM_007294.4(BRCA1):c.68_69del (p.Glu23fs) AND hereditary breast ovarian cancer syndrome*. ClinVar.  
+https://www.ncbi.nlm.nih.gov/clinvar/100625011/
+
+National Center for Biotechnology Information. (2026). *VCV000017662.187: BRCA1 c.68_69delAG (p.Glu23ValfsTer17)*. ClinVar variation record.  
+https://www.ncbi.nlm.nih.gov/clinvar/variation/17662/
+
+National Center for Biotechnology Information. (n.d.). *BRCA1 DNA repair associated (BRCA1) [Gene]*. NCBI Gene.  
+https://www.ncbi.nlm.nih.gov/gene/672
+
+King, M.-C., Marks, J. H., & Mandell, J. B. (2003). Breast and ovarian cancer risks due to inherited mutations in BRCA1 and BRCA2. *Science, 302*(5645), 643–646.  
+https://doi.org/10.1126/science.1088759
